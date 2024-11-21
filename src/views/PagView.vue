@@ -2,10 +2,9 @@
 import PagContainer from '@/components/PagContainer.vue'
 import { ref } from 'vue'
 
-const url = ref('pag/like.pag')
-// const url = ref(new URL('@/assets/test.pag', import.meta.url).href)
+const url = ref('/pag/like.pag')
 function toggle() {
-  url.value === 'pag/like.pag' ? (url.value = 'pag/fans.pag') : (url.value = 'pag/like.pag')
+  url.value === '/pag/like.pag' ? (url.value = '/pag/fans.pag') : (url.value = '/pag/like.pag')
 }
 </script>
 

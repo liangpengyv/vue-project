@@ -17,7 +17,15 @@ const pagCanvasRef = useTemplateRef('pag')
 let PAG
 let pagView
 async function loadPag() {
-  if (!PAG) PAG = await PAGInit()
+  if (!PAG)
+    PAG = await PAGInit({
+      locateFile(file) {
+        if (file === 'libpag.wasm') {
+          return '/libpag.wasm'
+        }
+        return file
+      },
+    })
   if (pagView) pagView.destroy()
 
   const blob = await (await fetch(props.url)).blob()
