@@ -17,6 +17,16 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/PagView.vue'),
     },
+    {
+      path: '/svg',
+      name: 'svg',
+      component: () => import('../views/SvgView.vue'),
+    },
+    {
+      path: '/border-gradient',
+      name: 'border-gradient',
+      component: () => import('../views/BorderGradientView.vue'),
+    },
   ],
 })
 

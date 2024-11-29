@@ -5,10 +5,11 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="wrapper">
-      <nav>
+      <nav class="nav">
         <RouterLink to="/">Home</RouterLink>
-        <br />
         <RouterLink to="/pag">Pag</RouterLink>
+        <RouterLink to="/svg">Svg</RouterLink>
+        <RouterLink to="/border-gradient">Border Gradient</RouterLink>
       </nav>
     </div>
   </header>
@@ -16,4 +17,9 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+.nav {
+  display: flex;
+  gap: 16px;
+}
+</style>
