@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "libpag": "^4.2.84",
+    "lottie-web": "^5.12.2",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },

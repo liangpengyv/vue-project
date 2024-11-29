@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/pag">Pag</RouterLink>
         <RouterLink to="/svg">Svg</RouterLink>
         <RouterLink to="/border-gradient">Border Gradient</RouterLink>
+        <RouterLink to="/lottie-animation">Lottie Animation</RouterLink>
       </nav>
     </div>
   </header>

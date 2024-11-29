@@ -27,6 +27,11 @@ const router = createRouter({
       name: 'border-gradient',
       component: () => import('../views/BorderGradientView.vue'),
     },
+    {
+      path: '/lottie-animation',
+      name: 'lottie-animation',
+      component: () => import('../views/LottieAnimationView.vue'),
+    },
   ],
 })
 
