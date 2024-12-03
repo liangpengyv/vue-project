@@ -3,32 +3,33 @@
     ref="lottieContainer"
     class="lottie-container"
     :style="{
-      width: props.width + 'px',
-      height: props.height + 'px',
+      width: width + 'px',
+      height: height + 'px',
     }"
   ></div>
 </template>
 
-<script setup>
-import lottie from 'lottie-web'
+<script setup lang="ts">
+import lottie, { type AnimationItem } from 'lottie-web'
 import { onMounted, onUnmounted, useTemplateRef } from 'vue'
 
-const props = defineProps({
-  width: Number,
-  height: Number,
-})
+const props = defineProps<{
+  url: string
+  width?: number
+  height?: number
+}>()
 
 const lottieRef = useTemplateRef('lottieContainer')
 
-let animation
+let animation: AnimationItem
 
 onMounted(() => {
   animation = lottie.loadAnimation({
-    container: lottieRef.value,
+    container: lottieRef.value as Element,
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '/lottie-json/LottieLogo1.json',
+    path: props.url,
   })
 })
 

@@ -1,9 +1,9 @@
 <template>
   <h1>Lottie Animation</h1>
-  <LottieContainer width="300" />
+  <LottieContainer url="/lottie-json/LottieLogo1.json" :width="300" :height="300" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import LottieContainer from '@/components/LottieContainer.vue'
 </script>
 
