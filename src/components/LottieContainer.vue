@@ -11,32 +11,65 @@
 
 <script setup lang="ts">
 import lottie, { type AnimationItem } from 'lottie-web'
-import { onMounted, onUnmounted, useTemplateRef } from 'vue'
+import { onMounted, onUnmounted, useTemplateRef, watch } from 'vue'
 
-const props = defineProps<{
-  url: string
+interface Props {
+  path: string
   width?: number
   height?: number
-}>()
+  loop?: boolean
+  speed?: number
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  width: 300,
+  height: 300,
+  loop: true,
+  speed: 1,
+})
 
 const lottieRef = useTemplateRef('lottieContainer')
 
-let animation: AnimationItem
+let animation: AnimationItem | null = null
 
-onMounted(() => {
+const initAnimation = () => {
   animation = lottie.loadAnimation({
     container: lottieRef.value as Element,
     renderer: 'svg',
-    loop: true,
     autoplay: true,
-    path: props.url,
+    path: props.path,
+    loop: props.loop,
   })
+
+  animation.setSpeed(props.speed)
+}
+
+const destroyAnimation = () => {
+  animation?.destroy()
+  animation = null
+}
+
+watch(
+  () => props.path,
+  () => {
+    destroyAnimation()
+    initAnimation()
+  },
+)
+
+watch(
+  () => props.speed,
+  () => {
+    animation?.setSpeed(props.speed)
+  },
+)
+
+onMounted(() => {
+  initAnimation()
 })
 
 onUnmounted(() => {
-  if (animation) {
-    animation.destroy()
-  }
+  destroyAnimation()
 })
 </script>
 
