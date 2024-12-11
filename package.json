@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@lottiefiles/dotlottie-vue": "^0.5.2",
+    "hls.js": "^1.5.17",
     "libpag": "^4.2.84",
     "lottie-web": "^5.12.2",
     "vue": "^3.5.12",

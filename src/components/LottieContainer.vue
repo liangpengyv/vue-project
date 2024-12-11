@@ -72,5 +72,3 @@ onUnmounted(() => {
   destroyAnimation()
 })
 </script>
-
-<style scoped></style>

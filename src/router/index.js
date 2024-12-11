@@ -32,6 +32,11 @@ const router = createRouter({
       name: 'lottie-animation',
       component: () => import('../views/LottieAnimationView.vue'),
     },
+    {
+      path: '/hls-player',
+      name: 'hls-player',
+      component: () => import('../views/HslPlayerView.vue'),
+    },
   ],
 })
 

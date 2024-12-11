@@ -10,7 +10,7 @@ function toggle() {
 
 <template>
   <div>
-    <h1>测试 Pag 动效资源</h1>
+    <h1>Pag 动效资源</h1>
   </div>
 
   <button @click="toggle">切换</button>

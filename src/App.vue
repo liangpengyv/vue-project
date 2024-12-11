@@ -11,6 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/svg">Svg</RouterLink>
         <RouterLink to="/border-gradient">Border Gradient</RouterLink>
         <RouterLink to="/lottie-animation">Lottie Animation</RouterLink>
+        <RouterLink to="/hls-player">HLS Player</RouterLink>
       </nav>
     </div>
   </header>

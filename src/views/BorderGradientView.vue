@@ -1,4 +1,5 @@
 <template>
+  <h1>Border Gradient</h1>
   <div class="border-gradient-1">构造简单，但不支持 border-radius</div>
   <br />
   <div class="border-gradient-2">支持 border-radius，但不支持背景色透明度</div>
